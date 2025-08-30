@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+      font-family: 'Avenir'; /* Choose a descriptive name */
+      src: url('src/assets/Avenir.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
