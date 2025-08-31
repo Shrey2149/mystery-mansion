@@ -55,43 +55,34 @@ export default function HeroSection() {
         /* Responsive positioning classes */
         .bookings-text {
           position: relative;
-          left: -15vw;
-          top: 12vh;
+          left: 35vw;
+          top: 30vh;
           display: inline-block;
         }
-        
-        .choose-button {
-          position: relative;
-          left: -20vw;
-          top: 15vh;
-          display: inline-block;
+
+        /* White divider line - force visibility on mobile */
+        .mobile-divider {
+          width: 240px !important;
+          height: 1px !important;
+          background-color: white !important;
+          margin: 0 auto !important;
+          opacity: 0.6 !important;
         }
 
         /* Media queries for better responsiveness */
         @media (max-width: 1200px) {
           .bookings-text {
-            left: -12vw;
-            top: 4vh;
-          }
-          .choose-button {
-            left: -12vw;
-            top: 5vh;
+            left: 35vw;
+            top: 30vh;
           }
         }
 
         @media (max-width: 768px) {
           .bookings-text {
-            left: 0;
-            top: 2vh;
+            left: 35vh;
+            top: 30vh;
             text-align: center;
             display: block;
-          }
-          .choose-button {
-            left: 0;
-            top: 3vh;
-            display: block;
-            margin: 1rem auto 0;
-            position: static;
           }
         }
 
@@ -100,11 +91,18 @@ export default function HeroSection() {
             left: 0;
             top: 1vh;
           }
-          .choose-button {
-            left: 0;
-            top: 2vh;
-            margin: 0.5rem auto 0;
+        }
+
+        /* Force show divider on small screens */
+        @media (max-width: 639px) {
+          .mobile-divider {
+            display: block !important;
           }
+        }
+
+        /* Show divider on all screens */
+        .mobile-divider {
+          display: block !important;
         }
       `}</style>
       
@@ -164,18 +162,6 @@ export default function HeroSection() {
                 </span>
               ))}
             </p>
-
-            {/* Button */}
-            <Link to="/locations">
-              <button 
-                className="choose-button bg-gray-800 text-white px-2 py-1 xs:px-3 xs:py-2 sm:px-4 sm:py-2 md:px-5 md:py-3 lg:px-6 lg:py-3 rounded-full shadow-lg hover:bg-gray-700 text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl transition-transform hover:scale-105" 
-                style={{ backgroundColor:'#464357'}} 
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#323232")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#464357")}
-              >
-                Choose Location
-              </button>
-            </Link>
           </div>
         </div>
       </div>
@@ -185,8 +171,8 @@ export default function HeroSection() {
         className="fixed bottom-0 left-0 right-0 bg-black/80 py-2 sm:py-4 px-4 sm:px-8 z-50 backdrop-blur-sm"
         style={{ fontFamily: "Avenir", color:'#b9b7c7ff'}}
       >
-        <div className="max-w-7xl mx-auto flex flex-col text-center justify-center items-center space-y-1">
-          <div className="text-center space-y-3">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:justify-between sm:items-center text-center space-y-1 sm:space-y-0">
+          <div className="flex-1 text-center space-y-3">
             <p className="text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
               Stay in a premium villa in a group of friends/colleagues.
             </p>
@@ -195,6 +181,20 @@ export default function HeroSection() {
             <p className="text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
               Solve a real-life mystery game during the Stay
             </p>
+          </div>
+
+          {/* Button on the right */}
+          <div className="flex-shrink-0 mt-2 sm:mt-0 sm:ml-6">
+            <Link to="/locations">
+              <button 
+                className="bg-gray-800 text-white px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 xl:px-8 xl:py-4 rounded-full shadow-lg hover:bg-gray-700 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl transition-all hover:scale-105 whitespace-nowrap" 
+                style={{ backgroundColor:'#464357'}} 
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#323232")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#464357")}
+              >
+                Choose Location
+              </button>
+            </Link>
           </div>
         </div>
       </div>

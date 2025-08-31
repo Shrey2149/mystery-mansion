@@ -23,20 +23,21 @@ import { Link } from "react-router-dom";
 export default function Instructions() {
   // Array of property images - add more images here
   const propertyImages = [
-    Img,
     secondImg,
-    thirdImg,
-    forthImg,
-    fifthImg,
     sixthImg,
+    fifthImg,
+    forthImg,
     seventhImg,
+    Img,
+    thirdImg,
     eighthImg,
     ninthImg,
     tenthImg,
     eleventhImg,
+    forteenthImg,
     twelvethImg,
     thirteenthImg,
-    forteenthImg,
+    
     fifteenthImg,
     sixteenthImg,
     seventeenthImg,

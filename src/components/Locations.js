@@ -83,15 +83,10 @@ export default function Locations() {
           
         </h2>
     
-        {/* Price section - positioned properly */}
-        <div className="absolute top-3 right-5 text-right mt-1">
-          <p className="text-gray-700 font-bold text-4xl" style = {{transform: "translate(0px, 70px)"}}>₹35,000</p>
-          <p className="text-sm text-gray-500 line-through text-xl" style = {{transform: "translate(0px, 70px)"}}>₹90,000</p>
-          <p className="text-base text-gray-700" style = {{transform: "translate(0px, 70px)"}}>(per group)</p>
-        </div>
+      
     
         {/* Button with proper spacing */}
-        <div className="mt-16"> {/* Add margin to avoid overlap */}
+        <div className="mt-10"> {/* Add margin to avoid overlap */}
           <Link to="/instructions">
           <button className="bg-gray-700 px-8 py-3 rounded-full hover:bg-gray-900 transition-colors duration-300 relative z-10 text-xl left-1 text-gray-400">
             Book Now
